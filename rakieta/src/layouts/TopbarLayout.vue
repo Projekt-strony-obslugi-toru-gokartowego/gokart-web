@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Menubar from 'primevue/menubar'
+import Button from 'primevue/button'
 
 const items = ref([
   {
@@ -33,6 +34,11 @@ const items = ref([
            <span :class="item.icon" />
            <span class="ml-2">{{ item.label }}</span>
          </a>
+       </router-link>
+     </template>
+     <template #end>
+       <router-link :to="{name: 'login'}">
+         <Button label="Wyloguj"/>
        </router-link>
      </template>
    </Menubar>
