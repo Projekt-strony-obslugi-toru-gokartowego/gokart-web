@@ -6,7 +6,7 @@ import Divider from 'primevue/divider';
 
 <template>
   <Card class="contact">
-    <template #title>Simple Contact Card</template>
+    <template #title>Kontakt</template>
     <template #content>
       <div class="row" style="display: flex; flex-direction: row; gap: 16px;">
         <div class="names" style="width: calc(100% - 400px); display: flex; flex-wrap: wrap; align-content: flex-start;">

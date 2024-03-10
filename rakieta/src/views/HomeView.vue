@@ -4,7 +4,7 @@ import Card from 'primevue/Card';
 
 <template>
   <Card class="home">
-    <template #title>Simple Home Card</template>
+    <template #title>Strona główna</template>
     <template #content>
       <p class="m-0">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque

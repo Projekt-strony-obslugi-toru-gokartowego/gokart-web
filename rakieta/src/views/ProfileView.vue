@@ -31,7 +31,7 @@ const getRandom = (values: string[]):string => values[(Math.floor(Math.random() 
 
 <template>
   <Card class="profile">
-    <template #title>Simple Profile Card</template>
+    <template #title>Profil</template>
     <template #content>
       <div class="row" style="display: flex; flex-direction: row; gap: 16px;">
         <Image :src="getRandom(images)" alt="Image" width="200px" preview />
