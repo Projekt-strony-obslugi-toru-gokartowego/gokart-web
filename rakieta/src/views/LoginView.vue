@@ -30,7 +30,7 @@ const submitDisabled = computed(() => !password.value || !username.value);
   <Card class="login">
     <template #title >
       <div class="login__title">
-        <img src="https://compu-kart.co.za/wp-content/uploads/2023/01/logo.png">
+        <img src="https://compu-kart.co.za/wp-content/uploads/2023/01/logo.png" alt="logo">
         <h1>Logowanie</h1>
       </div>
     </template>
@@ -66,6 +66,9 @@ const submitDisabled = computed(() => !password.value || !username.value);
           />
           <InlineMessage v-if="isInvalid(password)"> Password is required</InlineMessage>
         </div>
+        <router-link :to="{name: 'home'}">
+          <Button label="Nie masz konta? Zarejestruj się" link />
+        </router-link>
         <Button
             type="button"
             label="Submit"
