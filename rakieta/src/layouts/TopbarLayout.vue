@@ -1,0 +1,59 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import Menubar from 'primevue/menubar'
+
+const items = ref([
+  {
+    label: 'Strona gówna',
+    icon: 'pi pi-home',
+    name: 'home',
+  },
+  {
+    label: 'Kontakt',
+    icon: 'pi pi-phone',
+    name: 'contact',
+  },
+  {
+    label: 'Profil',
+    icon: 'pi pi-user',
+    name: 'contact',
+  }
+]);
+</script>
+
+<template>
+ <div class="topbar-layout">
+   <Menubar :model="items">
+     <template #item="{ item, props }">
+       <router-link v-if="item.name" v-slot="{ href, navigate }" :to="{name: item.name}" custom>
+         <a :href="href" v-bind="props.action" @click="navigate" class="topbar-layout__link">
+           <span :class="item.icon" />
+           <span class="ml-2">{{ item.label }}</span>
+         </a>
+       </router-link>
+     </template>
+   </Menubar>
+   <div class="topbar-layout__body">
+    <RouterView />
+   </div>
+ </div>
+</template>
+
+<style scoped lang="scss">
+.topbar-layout {
+  width: 100%;
+  background: $tobpar-layout-background;
+  min-height: 100vh;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__body {
+    width:100%;
+    padding: 30px;
+  }
+}
+</style>
