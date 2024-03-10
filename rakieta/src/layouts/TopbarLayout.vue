@@ -16,7 +16,7 @@ const items = ref([
   {
     label: 'Profil',
     icon: 'pi pi-user',
-    name: 'contact',
+    name: 'profile',
   }
 ]);
 </script>
