@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Menubar from 'primevue/menubar'
-import Button from 'primevue/button'
+import Button from 'primevue/Button';
 
 const items = ref([
   {
