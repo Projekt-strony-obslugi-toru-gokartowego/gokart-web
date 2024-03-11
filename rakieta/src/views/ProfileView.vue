@@ -33,28 +33,49 @@ const getRandom = (values: string[]):string => values[(Math.floor(Math.random() 
   <Card class="profile">
     <template #title>Simple Profile Card</template>
     <template #content>
-      <div class="row" style="display: flex; flex-direction: row; gap: 16px;">
+      <div class="row">
         <Image :src="getRandom(images)" alt="Image" width="200px" preview />
-        <div class="names" style="width: calc(100% - 200px); display: flex; flex-wrap: wrap; align-content: flex-start;">
-          <p class="m-0 first-name" style="width: 50%;">
+        <div class="profile__names">
+          <p class="profile__name">
             First name: {{getRandom(names)}}
           </p>
-          <p class="m-0 second-name" style="width: 50%;">
+          <p class="profile__name">
             Second name: {{getRandom(names)}}
           </p>
-          <p class="m-0 last-name" style="width: 50%;">
+          <p class="profile__name">
             Last name: {{getRandom(lastNames)}}
           </p>
         </div>
       </div>
-      <p class="m-0">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
         quas!
       </p>
-      <p class="m-0">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
         quas!
       </p>
     </template>
   </Card>
 </template>
+
+<style scoped lang="scss">
+.row{
+  display: flex; 
+  flex-direction: row; 
+  gap: 16px;
+}
+
+.profile {
+  &__names {
+    width: calc(100% - 200px); 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-content: flex-start;
+  }
+
+  &__name {
+    width: 50%;
+  }
+}
+</style>

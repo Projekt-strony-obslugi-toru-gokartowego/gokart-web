@@ -20,23 +20,25 @@ const load = () => {
 
 const username = ref<undefined | string>(undefined);
 const password = ref<undefined | string>(undefined);
+const passwordCheck = ref<undefined | string>(undefined);
 
 const isInvalid = (value: undefined | string): boolean => value !== undefined && value.length === 0;
+const paswordsDiffer = (value: undefined | string): boolean => value !== undefined && value.length === 0 || value !== password.value;
 
-const submitDisabled = computed(() => !password.value || !username.value);
+const submitDisabled = computed(() => paswordsDiffer(passwordCheck.value) || !passwordCheck.value || !password.value || !username.value);
 </script>
 
 <template>
-  <Card class="login">
+  <Card class="register">
     <template #title >
-      <div class="login__title">
+      <div class="register__title">
         <img src="https://compu-kart.co.za/wp-content/uploads/2023/01/logo.png" alt="logo">
-        <h1>Logowanie</h1>
+        <h1>Rejestracja</h1>
       </div>
     </template>
     <template #content>
-      <div class="login__form">
-        <div class="login__form__item">
+      <div class="register__form">
+        <div class="register__form__item">
           <label
               for="username"
               class="p-sr-only"
@@ -51,7 +53,7 @@ const submitDisabled = computed(() => !password.value || !username.value);
           />
           <InlineMessage v-if="isInvalid(username)"> Username is required</InlineMessage>
         </div>
-        <div class="login__form__item">
+        <div class="register__form__item">
           <label
               for="password"
               class="p-sr-only"
@@ -67,12 +69,28 @@ const submitDisabled = computed(() => !password.value || !username.value);
           />
           <InlineMessage v-if="isInvalid(password)"> Password is required</InlineMessage>
         </div>
-        <router-link :to="{name: 'register'}">
-          <Button label="Nie masz konta? Zarejestruj się" link />
+        <div class="register__form__item">
+          <label
+              for="passwordCheck"
+              class="p-sr-only"
+          >
+            email
+          </label>
+          <InputText
+              id="passwordCheck"
+              placeholder="Password again"
+              type="password"
+              v-model="passwordCheck"
+              :invalid="isInvalid(passwordCheck)"
+          />
+          <InlineMessage v-if="paswordsDiffer(passwordCheck)"> Passwords differ</InlineMessage>
+        </div>
+        <router-link :to="{name: 'login'}">
+          <Button label="Masz już konto? Zaloguj się" link />
         </router-link>
         <Button
             type="button"
-            label="Zaloguj"
+            label="Zarejestruj"
             :disabled="submitDisabled"
             :loading="loading"
             @click="load"
@@ -83,7 +101,7 @@ const submitDisabled = computed(() => !password.value || !username.value);
 </template>
 
 <style scoped lang="scss">
-.login {
+.register {
   &__title {
     display: flex;
     align-items: center;
