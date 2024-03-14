@@ -37,6 +37,10 @@ function setSelectedDate(d:Date){
 function setShowDate(d:Date){
     showDate.value = d;
 }
+
+const reload = () => {
+  location.reload();
+}
 </script>
 
 <template>
@@ -101,7 +105,7 @@ function setShowDate(d:Date){
                 </div>
                 <div>
                     <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" />
-                    <Button label="Confirm" icon="pi pi-arrow-right" iconPos="right"/>
+                    <Button label="Confirm" icon="pi pi-arrow-right" iconPos="right" @click="reload"/>
                 </div>
             </template>
         </StepperPanel>
