@@ -6,7 +6,7 @@ import Button from 'primevue/button';
 import TimeCard from '@/components/TimeCard.vue';
 import InputNumber from 'primevue/inputnumber';
 import { CalendarView, CalendarViewHeader } from "vue-simple-calendar";
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 const date = ref<undefined | string>(undefined);
 const time = ref<undefined | string>(undefined);
@@ -27,7 +27,12 @@ function selectTime(timeString:string, timeCardId:number) {
 };
 
 // Calendar
+const selectedDate = ref<undefined | Date>(new Date);
 const showDate = ref<undefined | Date>(new Date);
+
+function setSelectedDate(d:Date){
+    selectedDate.value = d;
+}
 
 function setShowDate(d:Date){
     showDate.value = d;
@@ -43,11 +48,15 @@ function setShowDate(d:Date){
             <template #content="{ nextCallback }">
                 <div class="calendar__wrapper">
                     <h1>My Calendar</h1>
+                    {{"Wybrana data: "+  selectedDate?.getDate() + '.' + (selectedDate?.getMonth()+1) + '.' + selectedDate?.getFullYear() }}
                     <CalendarView
+                        :startingDayOfWeek="1" 
                         :show-date="showDate"
+                        @click-date="setSelectedDate"
                         class="theme-default holiday-us-traditional holiday-us-official">
                         <template #header="{ headerProps }">
-                            <CalendarViewHeader :header-props
+                            <CalendarViewHeader 
+                                :header-props
                                 @input="setShowDate" />
                         </template>
                     </CalendarView>
@@ -86,7 +95,7 @@ function setShowDate(d:Date){
         <StepperPanel header="Potwierdzenie">
             <template #content="{ prevCallback }">
                 <div>
-                    <div>Data: {{ date }}</div>
+                    <div>Data: {{  selectedDate?.getDate() + '.' + (selectedDate?.getMonth()+1) + '.' + selectedDate?.getFullYear()  }}</div>
                     <div>Godzina: {{ time }}</div>
                     <div>Liczba osób: {{ counter }}</div>
                 </div>
