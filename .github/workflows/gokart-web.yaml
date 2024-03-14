@@ -26,11 +26,13 @@ jobs:
           node-version: '20' # Choose the Node.js version that matches your project requirements
 
       - name: Install dependencies
+        working-directory: rakieta
         run: |
           npm install
           npm ci
 
       - name: Lint and test
+        working-directory: rakieta
         run: |
           npm run lint # Update or remove this line based on your project's linting setup
           npm run test # Update this line to match your project's test script
@@ -50,6 +52,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        working-directory: rakieta
         run: npm install # or use yarn install if you are using Yarn
 
       - name: Set up QEMU
