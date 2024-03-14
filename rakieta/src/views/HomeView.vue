@@ -5,12 +5,14 @@ import StepperPanel from 'primevue/stepperpanel';
 import Button from 'primevue/button';
 import TimeCard from '@/components/TimeCard.vue';
 import InputNumber from 'primevue/inputnumber';
+import { CalendarView, CalendarViewHeader } from "vue-simple-calendar";
 import {ref} from 'vue';
 
 const date = ref<undefined | string>(undefined);
 const time = ref<undefined | string>(undefined);
 const counter = ref<undefined | number>(1);
 
+// Time card
 function selectTime(timeString:string, timeCardId:number) {
   time.value = timeString;
   
@@ -23,6 +25,13 @@ function selectTime(timeString:string, timeCardId:number) {
 
     selectedTimeCard?.classList.add("selected");
 };
+
+// Calendar
+const showDate = ref<undefined | Date>(new Date);
+
+function setShowDate(d:Date){
+    showDate.value = d;
+}
 </script>
 
 <template>
@@ -32,8 +41,16 @@ function selectTime(timeString:string, timeCardId:number) {
       <Stepper orientation="vertical">
         <StepperPanel header="Wybierz datę">
             <template #content="{ nextCallback }">
-                <div>
-                    <div>Kalendarz</div>
+                <div class="calendar__wrapper">
+                    <h1>My Calendar</h1>
+                    <CalendarView
+                        :show-date="showDate"
+                        class="theme-default holiday-us-traditional holiday-us-official">
+                        <template #header="{ headerProps }">
+                            <CalendarViewHeader :header-props
+                                @input="setShowDate" />
+                        </template>
+                    </CalendarView>
                 </div>
                 <div>
                     <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback" />
@@ -93,5 +110,11 @@ function selectTime(timeString:string, timeCardId:number) {
 
 .selected {
     background-color: aliceblue;
+}
+
+.callendar__wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 </style>
