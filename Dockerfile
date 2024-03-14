@@ -1,11 +1,12 @@
 # Below code for production
 # build stage
-FROM node:lts-alpine AS build-stage
+FROM node:lts-alpine3.19 AS build-stage
 WORKDIR /app
 COPY ./rakieta/package*.json ./
 RUN npm install
-COPY ./rakieta .
-RUN npm run build
+COPY ./rakieta/ .
+RUN npm run build-only
+#RUN npm run build - should be
 
 # production stage
 FROM nginx:stable-alpine AS production-stage
