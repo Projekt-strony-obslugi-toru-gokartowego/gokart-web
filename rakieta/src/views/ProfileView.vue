@@ -68,7 +68,7 @@ const getRandom = (values: string[]):string => values[(Math.floor(Math.random() 
 
 .profile {
   &__names {
-    width: calc(100% - 200px); 
+    width: calc(100% - 200px);
     display: flex; 
     flex-wrap: wrap; 
     align-content: flex-start;
