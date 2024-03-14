@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from 'primevue/Card';
+import Card from 'primevue/card';
 import Image from 'primevue/image';
 import Divider from 'primevue/divider';
 </script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Card from 'primevue/Card';
-import InputText from 'primevue/InputText';
+import Card from 'primevue/card';
+import InputText from 'primevue/inputtext';
 import InlineMessage from 'primevue/inlinemessage';
 import Button from 'primevue/button';
 

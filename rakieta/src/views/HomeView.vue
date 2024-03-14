@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from 'primevue/Card';
+import Card from 'primevue/card';
 import Stepper from 'primevue/stepper';
 import StepperPanel from 'primevue/stepperpanel';
 import Button from 'primevue/button';
