@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests
         working-directory: rakieta
-        run: npm test:unit
+        run: npm run test:unit
 
       - name: Check for merge conflicts
         run: |
