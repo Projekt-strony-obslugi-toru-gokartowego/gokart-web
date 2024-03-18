@@ -2,11 +2,6 @@ name: Gokart-Web Application Workflow
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [ main ]
-    paths:
-      - 'rakieta/**'
-      - '.github/workflows/gokart-web.yaml'
   push:
     branches: [ main ]
     paths:
@@ -46,6 +41,11 @@ jobs:
 #        working-directory: rakieta
 #        run: |
 #          npm run test:e2e
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: gokart-web
+          path: ./rakieta
 
   docker-build:
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -100,7 +100,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: node-app
+          name: gokart-web
 
       - name: 'Deploy to Azure WebApp'
         id: deploy-to-webapp
