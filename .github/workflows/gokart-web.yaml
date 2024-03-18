@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: gokart-web
-          path: ./rakieta
+          path: .
 
   docker-build:
     if: ${{ github.ref == 'refs/heads/main' }}
