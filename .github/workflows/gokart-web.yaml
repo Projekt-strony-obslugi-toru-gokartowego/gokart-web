@@ -42,7 +42,7 @@ jobs:
 #        run: |
 #          npm run test:e2e
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gokart-web
           path: ./rakieta
@@ -98,7 +98,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: gokart-web
 
