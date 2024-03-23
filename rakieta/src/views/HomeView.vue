@@ -45,7 +45,7 @@ const reload = () => {
 
 <template>
   <Card class="home">
-    <template #title>Strona główna</template>
+    <template #title>Zakup biletu</template>
     <template #content>
       <Stepper orientation="vertical">
         <StepperPanel header="Wybierz datę">

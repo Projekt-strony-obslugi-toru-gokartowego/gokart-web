@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import Menubar from 'primevue/menubar'
 import Button from 'primevue/button';
+import Divider from "primevue/divider";
+import 'primeicons/primeicons.css'
 
 const items = ref([
   {
@@ -37,9 +39,19 @@ const items = ref([
        </router-link>
      </template>
      <template #end>
-       <router-link :to="{name: 'login'}">
-         <Button label="Wyloguj"/>
-       </router-link>
+      <div class="row">
+        <i class="pi pi-minus interactable" style="font-size: 0.8rem"></i>
+        <i style="font-size: 1.3rem">Aa</i>
+        <i class="pi pi-plus interactable" style="font-size: 0.8rem"></i>
+        <Divider layout="vertical"/>
+        <i class="pi pi-circle interactable"></i>
+        <i class="pi pi-circle-fill interactable"></i>
+        <Divider layout="vertical"/>
+        <router-link :to="{name: 'login'}">
+          <Button label="Wyloguj"/>
+        </router-link>
+      </div>
+
      </template>
    </Menubar>
    <div class="topbar-layout__body">
@@ -63,6 +75,17 @@ const items = ref([
   &__body {
     width:100%;
     padding: 30px;
+  }
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.interactable{
+  &:hover{
+    cursor: pointer;
   }
 }
 </style>
