@@ -21,6 +21,12 @@
   .p-image-preview-icon {
     background: transparent !important;
   }
+  .p-card-body {
+    border: 1px solid yellow;
+  }
+  .p-stepper .p-stepper-separator {
+    background-color: yellow !important;
+  }
 }
   body:has(.wcagf) {
     * {
