@@ -1,4 +1,10 @@
 /* color palette from <https://github.com/vuejs/theme> */
+.wcag * {
+  background: black !important;
+  color: yellow;
+  border-color: yellow;
+  outline-color: yellow !important;
+}
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
