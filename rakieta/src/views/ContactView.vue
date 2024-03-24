@@ -27,7 +27,7 @@ import Divider from 'primevue/divider';
           </p>
         </div>
         <Divider layout="vertical"/>
-        <Image src="https://i.pinimg.com/736x/31/e2/a1/31e2a17fc75dd7d332086446d8ebb40d.jpg" 
+        <Image src="https://i.imgflip.com/6u7z01.jpg" 
           alt="Image" 
           width="400px"
           class="contact__image"
@@ -56,6 +56,8 @@ import Divider from 'primevue/divider';
   &__image{
     height:fit-content; 
     align-self: center;
+    outline: 3px solid black;
+    border-radius: 8px;
   }
 }
 </style>

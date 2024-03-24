@@ -15,6 +15,12 @@
   .p-divider.p-divider-vertical:before {
     border-left-color: yellow !important;
   }
+  .p-image-preview-container:hover > .p-image-preview-indicator {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+  .p-image-preview-icon {
+    background: transparent !important;
+  }
 }
   body:has(.wcagf) {
     * {

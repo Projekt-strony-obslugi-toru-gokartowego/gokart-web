@@ -3,6 +3,7 @@
   background: black !important;
   color: yellow;
   border-color: yellow;
+  outline-color: yellow !important;
 }
 :root {
   --vt-c-white: #ffffff;

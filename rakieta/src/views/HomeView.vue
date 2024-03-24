@@ -73,9 +73,9 @@ const reload = () => {
         <StepperPanel header="Wybierz godzinę">
             <template #content="{ prevCallback, nextCallback }">
                 <div class="timer__cards">
-                    <TimeCard time="18:00 - 19:30" class="time__card" id="time_card_1" title="Najman zbiera lanie" @click="selectTime('18:00 - 19:30', 1)"/>
-                    <TimeCard time="19:30 - 21:00" class="time__card" id="time_card_2" title="Najman nie wytrzymuje 30 sekund w klatce" @click="selectTime('19:30 - 21:00', 2)"/>
-                    <TimeCard time="21:00 - 22:30" class="time__card" id="time_card_3" title="Psy zakuwają Najmana w kajdanki" @click="selectTime('21:00 - 22:30', 3)"/>
+                    <TimeCard time="18:00 - 19:30" class="time__card" id="time_card_1" title="Tor: Rakieta" @click="selectTime('18:00 - 19:30', 1)"/>
+                    <TimeCard time="19:30 - 21:00" class="time__card" id="time_card_2" title="Tor: Turbina" @click="selectTime('19:30 - 21:00', 2)"/>
+                    <TimeCard time="21:00 - 22:30" class="time__card" id="time_card_3" title="Tor: Rakieta" @click="selectTime('21:00 - 22:30', 3)"/>
                     <br/>
                 </div>
                 <div>
