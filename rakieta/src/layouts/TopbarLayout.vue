@@ -4,6 +4,7 @@ import Menubar from 'primevue/menubar'
 import Button from 'primevue/button';
 import Divider from "primevue/divider";
 import 'primeicons/primeicons.css'
+import router from "@/router";
 
 const items = ref([
   {
@@ -29,6 +30,7 @@ const removeWcag = () => document.getElementById('app')?.classList.remove('wcag'
 
 const addWcagF = () => document.getElementById('app')?.classList.add('wcagf');
 const removeWcagF = () => document.getElementById('app')?.classList.remove('wcagf');
+const blackAndYellow = () => window.open('https://www.youtube.com/watch?v=UePtoxDhJSw&ab_channel=WizKhalifaMusic');
 </script>
 
 <template>
@@ -60,7 +62,7 @@ const removeWcagF = () => document.getElementById('app')?.classList.remove('wcag
         ></i>
         <Divider layout="vertical"/>
         <i class="pi pi-circle interactable" @click="removeWcag"></i>
-        <i class="pi pi-circle-fill interactable" @click="addWcag"></i>
+        <i class="pi pi-circle-fill interactable" @click="addWcag" @dblclick="blackAndYellow"></i>
         <Divider layout="vertical"/>
         <router-link :to="{name: 'login'}">
           <Button label="Wyloguj"/>
