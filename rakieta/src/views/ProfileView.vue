@@ -34,7 +34,7 @@ const getRandom = (values: string[]):string => values[(Math.floor(Math.random() 
     <template #title>Profil</template>
     <template #content>
       <div class="row">
-        <Image :src="getRandom(images)" alt="Image" width="200px" preview />
+        <Image :src="getRandom(images)" alt="Image" class="image" width="200px" preview />
         <div class="profile__names">
           <p class="profile__name">
             First name: {{getRandom(names)}}
@@ -64,6 +64,11 @@ const getRandom = (values: string[]):string => values[(Math.floor(Math.random() 
   display: flex; 
   flex-direction: row; 
   gap: 16px;
+}
+
+.image {
+  outline: 3px solid black;
+  border-radius: 8px;
 }
 
 .profile {
